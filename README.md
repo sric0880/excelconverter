@@ -12,7 +12,7 @@ convertXlsx2Json(xlsx_filepath_name)
 ```
 
  * convert from json to xlsx:
- ```py
- from excelconverter import convertJson2Xlsx
- convertJson2Xlsx(json_filepath_name)
- ```
+```py
+from excelconverter import convertJson2Xlsx
+convertJson2Xlsx(json_filepath_name)
+```
