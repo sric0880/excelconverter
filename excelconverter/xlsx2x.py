@@ -3,6 +3,7 @@ import re
 from openpyxl import load_workbook
 
 def __parseDict(d):
+	d = { k: v for k, v in d.iteritems() if k is not None}
 	ret = {}
 	for k,v in d.items():
 		i = k.find('<')

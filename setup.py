@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='excelconverter',
-      version='1.1.1',
+      version='1.1.2',
       description='python tool for coverting from xlsx to json/lua and from json to xlsx, support complex json format',
       url='https://github.com/sric0880/excelconverter.git',
       author='sric0880',
