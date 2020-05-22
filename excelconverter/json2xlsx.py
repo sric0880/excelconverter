@@ -66,7 +66,7 @@ def convert(jsonfile):
 	cmd = 'json2xlsx %s -j %s -o %s' % (tsfilename, spjsonname, xlxsfilename)
 	if os.system(cmd) != 0:
 		raise Exception('convert form json to xlxs error');
-	print '%s 表成功生成' % xlxsfilename
+	print('%s 表成功生成' % xlxsfilename)
 
 	# set the style of the excel sheet
 	## freeze the first row

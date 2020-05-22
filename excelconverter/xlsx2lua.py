@@ -1,6 +1,6 @@
 # encoding: utf-8
 from slpp import slpp as lua
-from xlsx2x import parseObject
+from .xlsx2x import parseObject
 
 def convert(xlsxfile, tablename):
 	o = parseObject(xlsxfile)
