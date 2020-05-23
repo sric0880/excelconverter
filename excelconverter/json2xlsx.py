@@ -38,14 +38,14 @@ def convert(jsonfile):
 		if type(jsonObj) is dict:
 			simpleJsonObj = __parseDict(jsonObj)
 			sortedKeys = simpleJsonObj.keys()
-			sortedKeys.sort()
+			sorted(sortedKeys)
 			sortedValues = [ simpleJsonObj[k] for k in sortedKeys ]
 			sheetName = 'SingleObject'
 		elif type(jsonObj) is list:
 			simpleJsonObj = __parseArray(jsonObj)
 			if hasattr(simpleJsonObj[0], 'keys'):
 				sortedKeys = simpleJsonObj[0].keys()
-				sortedKeys.sort()
+				sorted(sortedKeys)
 				sortedValues = [ simpleJsonObj[0][k] for k in sortedKeys ]
 				sheetName = 'ObjectList'
 			else:
