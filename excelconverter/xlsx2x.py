@@ -3,7 +3,7 @@ import re
 from openpyxl import load_workbook
 
 def __parseDict(d):
-	d = { k: v for k, v in d.iteritems() if k is not None}
+	d = { k: v for k, v in d.items() if k is not None}
 	ret = {}
 	for k,v in d.items():
 		i = k.find('<')
@@ -37,7 +37,7 @@ def parseObject(xlsxfile):
 	wb = load_workbook(filename = xlsxfile)
 	ws = wb.active
 	rowsGenerator = ws.rows
-	headerRow = rowsGenerator.next()
+	headerRow = next(rowsGenerator)
 	header = [ cell.value for cell in headerRow ]
 	if ws.title == "ObjectList":
 		o = []
@@ -49,7 +49,7 @@ def parseObject(xlsxfile):
 		for row in rowsGenerator:
 			o.append(row[0].value)
 	elif ws.title == "SingleObject":
-		o = __parseDict(dict(zip(header, [cell.value for cell in rowsGenerator.next()])))
+		o = __parseDict(dict(zip(header, [cell.value for cell in next(rowsGenerator)])))
 	else:
 		raise Exception('Excel type not supported')
 	return o
