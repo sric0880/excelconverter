@@ -34,7 +34,7 @@ def __parseDict(d):
 	return ret
 
 def parseObject(xlsxfile):
-	wb = load_workbook(filename = xlsxfile)
+	wb = load_workbook(filename = xlsxfile, data_only=True)
 	ws = wb.active
 	rowsGenerator = ws.rows
 	headerRow = next(rowsGenerator)
